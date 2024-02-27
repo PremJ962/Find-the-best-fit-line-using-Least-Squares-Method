@@ -20,13 +20,48 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ```
 /*
 Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: 
-RegisterNumber:  
+Developed by: prem
+RegisterNumber:212222080042
+
+import numpy as np
+import matplotlib.pyplot as plt
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+X_mean=np.mean(X)
+print(X_mean)
+Y_mean=np.mean(Y)
+print(Y_mean)
+num=0
+denum=0
+for i in range(len(X)):
+  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+  denum+=(X[i]-X_mean)**2
+m=num/denum
+print(m)
+b=Y_mean - m*X_mean
+print(b)
+Y_pred=m*X+b
+print(Y_pred)
+plt.scatter(X,Y,color='blue')
+plt.plot(X,Y_pred,color='yellow') 
+plt.show()
+
 */
 ```
 
 ## Output:
-![best fit line](sam.png)
+[2,9,5,5,3,7,1,8,6,2] [69,98,82,77,71,84,55,94,84,64]
+
+slope 4.742603550295859
+
+y-intercept 55.035502958579876
+
+[64.52071006 97.71893491 78.74852071 78.74852071 69.26331361 88.23372781 59.77810651 92.97633136 83.49112426 64.52071006]
+
+[2,9,5,5,3,7,1,8,6,2] [69,98,82,77,71,84,55,94,84,64]
+
+![image](https://github.com/PremJ962/Find-the-best-fit-line-using-Least-Squares-Method/assets/161425730/d34064e0-83f9-446f-90c7-c2c1d0b2886d)
+
 
 
 ## Result:
